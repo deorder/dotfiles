@@ -1,0 +1,3 @@
+#!/bin/sh
+jack_control start
+ln -fs ${HOME}/.edirol.asoundrc ${HOME}/.asoundrc

@@ -1,0 +1,3 @@
+#!/bin/sh
+dconf write /org/mate/desktop/session/required-components/windowmanager "'bspwm'"
+dconf write /org/mate/desktop/background/show-desktop-icons "false"

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+wid=$1
+class=$2
+instance=$3
+
+title="$(xdotool getwindowname $wid)"
+
+case "$title" in
+  *Emulator*)
+      echo "state=floating"
+      echo "follow=no"
+  ;;
+  *)
+      echo ""
+  ;;
+esac

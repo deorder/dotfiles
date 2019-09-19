@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIRECTORY="$HOME/Screenshots"
+TIMESTAMP="$(date +%Y%m%d%H%M%S)"
+
+mkdir -p $DIRECTORY && scrot $DIRECTORY/$TIMESTAMP.png

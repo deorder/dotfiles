@@ -1,0 +1,46 @@
+#!/bin/bash
+
+bspc config window_gap -1
+bspc config border_width 1
+
+bspc config split_ratio 0.50
+
+bspc config auto_cancel true
+bspc config auto_alternate true
+bspc config ignore_ewmh_focus true
+bspc config focus_by_distance true
+bspc config history_aware_focus true
+bspc config focus_follows_pointer true
+bspc config apply_shadow_property true
+
+bspc config gapless_monocle true
+bspc config borderless_monocle true
+
+bspc config apply_floating_atom true
+
+bspc config normal_border_color "$(xrdb -query | grep "*normal_border_color" | cut -f 2)"
+bspc config active_border_color "$(xrdb -query | grep "*active_border_color" | cut -f 2)"
+bspc config presel_border_color "$(xrdb -query | grep "*presel_border_color" | cut -f 2)"
+bspc config urgent_border_color "$(xrdb -query | grep "*urgent_border_color" | cut -f 2)"
+bspc config focused_border_color "$(xrdb -query | grep "*focused_border_color" | cut -f 2)"
+bspc config presel_feedback_color "$(xrdb -query | grep "*presel_feedback_color" | cut -f 2)"
+bspc config focused_locked_border_color "$(xrdb -query | grep "*focused_locked_border_color" | cut -f 2)"
+
+bspc config external_rules_command "${HOME}/.bspwmrc_external_rules"
+
+bspc rule -a *:xterm.scratchpad sticky=on state=floating
+bspc rule -a *:xterm.run sticky=on state=floating
+
+bspc rule -a *:conky sticky=on manage=off lower=on
+bspc rule -a *:feh state=floating manage=off
+
+bspc rule -a *:jetbrains-studio state=floating
+bspc rule -a *:mplayer state=floating
+bspc rule -a *:qemu state=floating
+
+bspc monitor LVDS1 -d main web dev gfx sfx
+bspc monitor VGA1 -d main demo plan
+
+#bspc rule -a *:thunar state=floating
+#bspc rule -a firefox desktop=web
+#bspc rule -a gimp desktop=gfx

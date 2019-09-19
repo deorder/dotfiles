@@ -1,0 +1,18 @@
+#!/bin/sh
+killall -q polybar
+
+xrandr --output VGA1 --off
+
+sleep 1
+
+xrandr --output VGA1 --auto
+xrandr --output VGA1 --left-of LVDS1
+
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+external_monitor=$(xrandr --query | grep 'VGA1')
+if [[ $external_monitor = *connected* ]]; then
+  polybar -c ${HOME}/.polybarrc top_external &
+fi
+
+polybar -c ${HOME}/.polybarrc top &

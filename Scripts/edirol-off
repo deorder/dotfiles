@@ -1,0 +1,5 @@
+#!/bin/sh
+jack_control stop
+rm -f ${HOME}/.asoundrc
+amixer set -c 0 PCM 255 unmute
+amixer set -c 0 Master 255 unmute

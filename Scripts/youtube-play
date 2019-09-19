@@ -1,0 +1,4 @@
+#!/bin/bash
+mpc -h htpc clear
+mpc -h htpc add `youtube-dl -f bestaudio -g "$@"`
+mpc -h htpc play 

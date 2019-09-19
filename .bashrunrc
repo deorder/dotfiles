@@ -1,0 +1,9 @@
+PS1="> "
+XTERM=xterm
+HISTFILE=$HOME/.bashrun_history
+HISTCONTROL=ignoredups:erasedups
+
+bind '"\e"':"\"\x04\""
+bind '"\x0d"':"\" &\n\""
+bind '"\C-g"':"\"\x04\""
+bind '"\t": menu-complete'

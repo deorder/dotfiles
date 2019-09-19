@@ -1,0 +1,2 @@
+#!/bin/bash
+cat $1 | grep compile | sed "s/.* ${2//\//\\/}\/\(\([-\/0-9a-zA-Z_]*\)\.c\) .*/\2.c/g" | uniq

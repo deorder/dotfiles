@@ -1,0 +1,3 @@
+#!/bin/sh
+export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64/:${ANDROID_HOME}/emulator/lib64/qt/lib:$LD_LIBRARY_PATH
+wmname LG3D && /usr/bin/android-studio

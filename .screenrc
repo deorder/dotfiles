@@ -1,0 +1,26 @@
+# Key bindings
+bindkey -k k5 prev
+bindkey -k k6 next
+  
+bindkey -k k7 title
+   
+bindkey -k k8 screen
+bindkey -k k9 kill
+bindkey -k k1 select 0
+bindkey -k k2 select 1
+bindkey -k k3 select 2
+bindkey -k k4 select 3
+ 
+# Set terminal to 256 colors
+term screen-256color
+
+# Disable the startup message
+startup_message off
+
+# Increase scrollback buffer
+defscrollback 5000
+
+# Enable UTF-8 by default
+defutf8 on
+
+altscreen on

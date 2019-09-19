@@ -1,0 +1,342 @@
+; vim: set ft=dosini:
+
+[colors]
+
+text = #ccc
+separator = #444
+selection = #333
+
+alert = ${xrdb:color9}
+
+foreground = ${xrdb:foreground} 
+background = ${xrdb:background}
+
+dark_black = ${xrdb:color0}
+light_black = ${xrdb:color8}
+
+dark_red = ${xrdb:color1}
+light_red = ${xrdb:color9}
+
+dark_green = ${xrdb:color2}
+light_green = ${xrdb:color10}
+
+dark_yellow = ${xrdb:color3}
+light_yellow = ${xrdb:color11}
+
+dark_blue = ${xrdb:color4}
+light_blue = ${xrdb:color12}
+
+dark_magenta = ${xrdb:color5}
+light_magenta = ${xrdb:color13}
+
+dark_cyan = ${xrdb:color6}
+light_cyan = ${xrdb:color14}
+
+dark_white = ${xrdb:color7}
+light_white = ${xrdb:color15}
+
+cursor = ${xrdb:cursorColor}
+
+[bar/top]
+
+height = 24 
+width = 100%
+monitor = LVDS1
+
+separator = %{T3}|%{T-}
+
+wm-restack = bspwm
+
+fixed-center = true
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+foreground = ${colors.separator}
+background = ${colors.background}
+
+modules-left = bspwm cast
+modules-center = xwindow 
+modules-right = mpd_htpc battery volume date time
+
+font-0 = xos4 Terminess Powerline:pixelsize=12;1
+font-1 = Material Icons:fontformat=truetype:pixelsize=10:antialias=true;2
+font-2 = xos4 Terminess Powerline:pixelsize=22;3
+#font-4 = Wuncon Siji:pixelsize=10;1
+
+[bar/top_external]
+
+height = 24 
+width = 100%
+monitor = VGA1
+
+separator = %{T3}|%{T-}
+
+wm-restack = bspwm
+
+fixed-center = true
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+foreground = ${colors.separator}
+background = ${colors.background}
+
+modules-left = bspwm cast
+modules-center = xwindow 
+modules-right = mpd_htpc battery volume date time
+
+font-0 = xos4 Terminess Powerline:pixelsize=12;1
+font-1 = Material Icons:fontformat=truetype:pixelsize=10:antialias=true;2
+font-2 = xos4 Terminess Powerline:pixelsize=22;3
+#font-4 = Wuncon Siji:pixelsize=10;1
+
+[module/bspwm]
+
+type = internal/bspwm
+
+pin-workspaces = true
+
+label-separator = %{T3}|%{T-}
+label-separator-foreground = ${colors.separator}
+
+ws-icon-0 = main;%{T2}%{T-}
+ws-icon-1 = web;%{T2}%{T-}
+ws-icon-2 = dev;%{T2}%{T-}
+ws-icon-3 = gfx;%{T2}%{T-}
+ws-icon-4 = sfx;%{T2}%{T-}
+
+label-empty = %icon% %name%
+label-empty-foreground = ${colors.text}
+label-empty-padding = 1
+
+label-occupied = %icon% %name%
+label-occupied-foreground = ${colors.dark_blue}
+label-occupied-padding = 1
+
+label-urgent = %icon% %name%
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+label-visible = %icon% %name%
+label-visible-padding = 1
+
+label-unfocused = %icon% %name%
+label-unfocused-padding = 1
+
+label-focused = %icon% %name%
+label-focused-foreground = ${colors.dark_yellow}
+label-focused-padding = 1
+
+[module/xwindow]
+
+type = internal/xwindow
+label = %title:0:120:...%
+label-foreground = ${colors.text}
+
+[module/mpd]
+
+type = internal/mpd
+
+icon-stop             = %{T2}%{T-}
+icon-stop-foreground  = ${colors.text}
+icon-play             = %{T2}%{T-}
+icon-play-foreground  = ${colors.text}
+icon-pause            = %{T2}%{T-}
+icon-pause-foreground = ${colors.text}
+icon-prev             = %{T2}%{T-}
+icon-prev-foreground  = ${colors.text}
+icon-next             = %{T2}%{T-}
+icon-next-foreground  = ${colors.text}
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+label-song = %artist% - %title%
+label-song-foreground = ${colors.text}
+
+format-playing-prefix = "%{T2}%{T-} "
+format-playing-prefix-foreground = ${colors.light_green}
+
+format-paused-prefix = "%{T2}%{T-} "
+format-paused-prefix-foreground = ${colors.light_yellow}
+
+format-paused  = <label-song> <icon-prev> <icon-play> <icon-next>
+format-playing = <label-song> <icon-prev> <icon-pause> <icon-next>
+
+[module/mpd_htpc]
+
+type = internal/mpd
+
+host = htpc
+port = 6600
+
+icon-stop             = %{T2}%{T-}
+icon-stop-foreground  = ${colors.text}
+icon-play             = %{T2}%{T-}
+icon-play-foreground  = ${colors.text}
+icon-pause            = %{T2}%{T-}
+icon-pause-foreground = ${colors.text}
+icon-prev             = %{T2}%{T-}
+icon-prev-foreground  = ${colors.text}
+icon-next             = %{T2}%{T-}
+icon-next-foreground  = ${colors.text}
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+label-song = %artist% - %title%
+label-song-foreground = ${colors.text}
+
+format-playing-prefix = "%{T2}%{T-} "
+format-playing-prefix-foreground = ${colors.light_green}
+
+format-paused-prefix = "%{T2}%{T-} "
+format-paused-prefix-foreground = ${colors.light_yellow}
+
+format-paused  = <label-song> <icon-prev> <icon-play> <icon-next>
+format-playing = <label-song> <icon-prev> <icon-pause> <icon-next>
+
+[module/wifi_down]
+
+type = internal/network
+interface = wlp3s0
+interval = 1.0
+accumulate-stats = true
+
+label-connected = " %downspeed:8% "
+label-connected-foreground = ${colors.text}
+
+format-connected-prefix = %{T2}%{T-}
+format-connected-prefix-foreground = ${colors.light_blue}
+
+[module/wifi_up]
+
+type = internal/network
+interface = wlp3s0
+interval = 1.0
+accumulate-stats = true
+
+label-connected = "%upspeed:8%"
+label-connected-foreground = ${colors.text}
+
+format-connected-prefix = "%{T2}%{T-} "
+format-connected-prefix-foreground = ${colors.light_blue}
+
+[module/eth_down]
+
+type = internal/network
+interface = enp0s31f6
+interval = 1.0
+accumulate-stats = true
+
+label-connected = "%downspeed:8%"
+label-connected-foreground = ${colors.text}
+
+format-connected-prefix = "%{T2}%{T-} "
+format-connected-prefix-foreground = ${colors.light_blue}
+
+[module/eth_up]
+
+type = internal/network
+interface = enp0s31f6
+interval = 1.0
+accumulate-stats = true
+
+label-connected = "%upspeed:8%"
+label-connected-foreground = ${colors.text}
+
+format-connected-prefix = %{T2}%{T-}
+format-connected-prefix-foreground = ${colors.light_blue}
+
+[module/date]
+
+type = internal/date
+interval = 1
+
+date = %d-%m-%Y
+date-alt = %d-%m-%Y
+
+label = "%date%"
+label-foreground = ${colors.text}
+
+format-prefix = "%{T2}%{T-} "
+format-prefix-foreground = ${colors.light_green}
+
+[module/time]
+
+type = internal/date
+interval = 1
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+label = "%time%"
+label-foreground = ${colors.text}
+
+format-prefix = "%{T2}%{T-} "
+format-prefix-foreground = ${colors.light_green}
+
+[module/battery]
+
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 100
+
+label-full = "%percentage:3%%"
+label-full-foreground = ${colors.text}
+
+label-charging = "%percentage:3%%"
+label-charging-foreground = ${colors.text}
+
+label-discharging = "%percentage:3%%"
+label-discharging-foreground = ${colors.text}
+
+format-full = <label-full>
+format-full-prefix = "%{T2}%{T-} "
+format-full-prefix-foreground = ${colors.light_green}
+
+format-charging = <label-charging>
+format-charging-prefix = "%{T2}%{T-} "
+format-charging-prefix-foreground = ${colors.light_blue}
+
+format-discharging = <label-discharging>
+format-discharging-prefix = "%{T2}%{T-} "
+format-discharging-prefix-foreground = ${colors.light_yellow}
+
+[module/volume]
+
+type = internal/alsa
+interval = 0.1
+
+format-volume-prefix = "%{T2}%{T-} "
+format-volume-prefix-foreground = ${colors.light_green}
+
+label-volume = "%percentage:3%%"
+label-volume-foreground = ${colors.text}
+
+format-muted-prefix = "%{T2}%{T-} "
+format-muted-prefix-foreground = ${colors.light_red}
+
+label-muted = "%percentage:3%%"
+label-muted-foreground = ${colors.text}
+
+[module/cast]
+type = custom/script
+interval = 1
+label = "%output%"
+click-left = killall ffmpeg
+exec = cat /home/${HOME}/.record
+format-foreground = ${colors.light_red}
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top    = 0
+margin-bottom = 0
