@@ -331,7 +331,7 @@ type = custom/script
 interval = 1
 label = "%output%"
 click-left = killall ffmpeg
-exec = cat /home/${HOME}/.record
+exec = cat ${HOME}/.record
 format-foreground = ${colors.light_red}
 
 [settings]
