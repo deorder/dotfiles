@@ -1,0 +1,2 @@
+#!/bin/bash
+scanimage --format=png --resolution=300 --mode Gray > ${HOME}/Documents/scans/${1}-$(date +%Y%m%d).png

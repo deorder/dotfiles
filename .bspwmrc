@@ -38,6 +38,9 @@ bspc rule -a *:jetbrains-studio state=floating
 bspc rule -a *:mplayer state=floating
 bspc rule -a *:qemu state=floating
 
+bspc monitor HDMI-0 -d main web dev gfx sfx
+bspc monitor DP-5 -d main web dev gfx sfx
+
 bspc monitor LVDS1 -d main web dev gfx sfx
 bspc monitor VGA1 -d main demo plan
 
