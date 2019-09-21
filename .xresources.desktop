@@ -1,0 +1,118 @@
+! vim: set ft=xdefaults:
+
+#define base_dark_black #222222
+#define base_light_black #666666
+
+#define base_dark_red #d65050
+#define base_light_red #ef6b6b 
+
+#define base_dark_green #90a90f
+#define base_light_green #b7ce42
+
+#define base_dark_yellow #e6d817
+#define base_light_yellow #f3ee3e
+
+#define base_dark_blue #94c3cc
+#define base_light_blue #a5d9e4
+
+#define base_dark_magenta #c36a8c
+#define base_light_magenta #e17689
+
+#define base_dark_cyan #7a92a2
+#define base_light_cyan #98abaf
+
+#define base_dark_white #f2f1f0
+#define base_light_white #f2f1f0
+
+#define base_cursor #dfe0db
+#define base_background #111111
+#define base_foreground #f2f1f0
+
+#define base_background_new #33303b
+#define base_foreground_new #eff0eb
+
+#define base_background_trans #22202b
+#define base_foreground_trans #eff0eb
+
+!black
+*color0: base_dark_black
+*color8: base_light_black
+
+!red
+*color1: base_dark_red
+*color9: base_light_red
+
+!green
+*color2: base_dark_green
+*color10: base_light_green
+
+!yellow
+*color3: base_dark_yellow
+*color11: base_light_yellow
+
+!blue
+*color4: base_dark_blue
+*color12: base_light_blue
+
+!magenta
+*color5: base_dark_magenta
+*color13: base_light_magenta
+
+!cyan
+*color6: base_dark_cyan
+*color14: base_light_cyan
+
+!white
+*color7: base_dark_white
+*color15: base_light_white
+
+*cursorColor: base_cursor
+*background: base_background_trans
+*foreground: base_foreground_trans
+
+Xft*dpi: 96
+Xft*rgba: rgb
+Xft*hinting: 1 
+Xft*autohint: 0
+Xft*antialias: 1
+Xft*hintstyle: hintslight
+Xft*lcdfilter: lcddefault
+
+!*xterm*faceName: xft:xos4 Terminus:antialias=false:pixelsize=16
+*xterm*faceName: xft:xos4 Terminess Powerline:antialias=false:pixelsize=24
+
+*xterm*utf8: true
+*xterm*locale: true
+*xterm*toolBar: false
+*xterm*borderWidth: 0
+*xterm*saveLines: 4096
+*xterm*scrollBar: false
+!*xterm*boldMode: false
+!*xterm*scaleHeight: 1.01
+*xterm*internalBorder: 7 
+*xterm*bellIsUrgent: true
+*xterm*dynamicColors: true
+*xterm*eightBitInput: false 
+*xterm*vt100*geometry: 80x50
+*xterm*metaSendsEscape: true
+*xterm*termName: xterm-256color
+*xterm*translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
+! Forbid bold font faces; bold type is light blue.
+*xterm*colorBDMode: true
+!*xterm*colorBD: rgb:82/a4/d3
+
+! Do not underscore text, underlined text is white.
+*xterm*colorULMode: true
+!*xterm*colorUL: rgb:e4/e4/e4
+
+*.charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48,58:48,63:48,61:48,44:48,38:48,59:48
+
+*focused_locked_border_color: base_light_black
+*focused_border_color: base_light_black
+*urgent_border_color: base_light_red
+*presel_border_color: base_light_black
+*active_border_color: base_light_black
+*normal_border_color: #000000
+
+*presel_feedback_color: base_dark_yellow

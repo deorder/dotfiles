@@ -15,7 +15,7 @@
 !.polybarrc
 !.gtkrc-2.0
 !.comptonrc
-!.xresources
+!.xresources*
 !.bspwmrc
 !.bspwmrc_external_rules
 !.vim/autoload/plug.vim

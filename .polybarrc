@@ -37,7 +37,7 @@ light_white = ${xrdb:color15}
 
 cursor = ${xrdb:cursorColor}
 
-[bar/top]
+[bar/top_laptop]
 
 height = 24 
 width = 100%
@@ -65,7 +65,35 @@ modules-right = mpd_htpc battery volume date time
 font-0 = xos4 Terminess Powerline:pixelsize=12;1
 font-1 = Material Icons:fontformat=truetype:pixelsize=10:antialias=true;2
 font-2 = xos4 Terminess Powerline:pixelsize=22;3
-#font-4 = Wuncon Siji:pixelsize=10;1
+
+[bar/top_desktop]
+
+height = 24 
+width = 100%
+monitor = DP-5
+
+separator = %{T3}|%{T-}
+
+wm-restack = bspwm
+
+fixed-center = true
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+foreground = ${colors.separator}
+background = ${colors.background}
+
+modules-left = bspwm cast
+modules-center = xwindow 
+modules-right = mpd_htpc battery volume date time
+
+font-0 = xos4 Terminess Powerline:pixelsize=18;1
+font-1 = Material Icons:fontformat=truetype:pixelsize=16:antialias=true;2
+font-2 = xos4 Terminess Powerline:pixelsize=28;3
 
 [bar/top_external]
 
@@ -95,7 +123,6 @@ modules-right = mpd_htpc battery volume date time
 font-0 = xos4 Terminess Powerline:pixelsize=12;1
 font-1 = Material Icons:fontformat=truetype:pixelsize=10:antialias=true;2
 font-2 = xos4 Terminess Powerline:pixelsize=22;3
-#font-4 = Wuncon Siji:pixelsize=10;1
 
 [module/bspwm]
 

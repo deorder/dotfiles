@@ -38,7 +38,14 @@ autocutsel -selection PRIMARY -fork
 autocutsel -selection CLIPBOARD -fork
 
 # Deorder: Merge custom xresource settings
-[[ -f ~/.xresources ]] && xrdb -merge ${HOME}/.xresources
+case "${HOSTNAME}" in
+  *-desktop)
+  [[ -f ~/.xresources.desktop ]] && xrdb -merge ${HOME}/.xresources.desktop
+  ;;
+  *-laptop)
+  [[ -f ~/.xresources.laptop ]] && xrdb -merge ${HOME}/.xresources.laptop
+  ;;
+esac
 
 # Deorder: Enable desktop effects
 compton --config ${HOME}/.comptonrc &
@@ -47,7 +54,15 @@ compton --config ${HOME}/.comptonrc &
 wmname LG3D
 
 # Deorder: Run programs
-polybar -c ${HOME}/.polybarrc top &
+case "${HOSTNAME}" in
+  *-desktop)
+  polybar -c ${HOME}/.polybarrc top_desktop &
+  ;;
+  *-laptop)
+  polybar -c ${HOME}/.polybarrc top_laptop &
+  ;;
+esac
+
 sxhkd -c ${HOME}/.sxhkdrc &
 bspwm -c ${HOME}/.bspwmrc
 #mate-session
