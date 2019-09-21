@@ -70,7 +70,7 @@
 *background: base_background_trans
 *foreground: base_foreground_trans
 
-Xft*dpi: 96
+Xft*dpi: 140
 Xft*rgba: rgb
 Xft*hinting: 1 
 Xft*autohint: 0
