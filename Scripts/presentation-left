@@ -15,4 +15,11 @@ if [[ $external_monitor = *connected* ]]; then
   polybar -c ${HOME}/.polybarrc top_external &
 fi
 
-polybar -c ${HOME}/.polybarrc top &
+case "${HOSTNAME}" in
+  *-desktop)
+  polybar -c ${HOME}/.polybarrc top_desktop &
+  ;;
+  *-laptop)
+  polybar -c ${HOME}/.polybarrc top_laptop &
+  ;;
+esac
