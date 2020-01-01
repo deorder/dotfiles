@@ -1,8 +1,5 @@
 /*
 
-!/Scripts
-!/Scripts/*
-
 !.vimrc
 !.bashrc
 !.bashrunrc
@@ -21,3 +18,14 @@
 !.vim/autoload/plug.vim
 !.gitattributes
 !.gitignore
+!.swaybarrc
+!.swayrc
+!.swayrc.laptop
+!.kittyrc
+!.alacrittyrc 
+!.waybar.css
+!.waybarrc
+
+!/Scripts
+!/Scripts/*
+Scripts/windows-connect

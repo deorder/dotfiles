@@ -1,0 +1,2 @@
+#!/bin/bash
+youtube-dl -i -f mp4 --add-metadata --write-all-thumbnails --embed-thumbnail --write-info-json --embed-subs --all-subs --download-archive 'archive.txt' -o '%(uploader)s/%(title)s/%(title)s.%(ext)s' -

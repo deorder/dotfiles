@@ -200,7 +200,7 @@ format-playing = <label-song> <icon-prev> <icon-pause> <icon-next>
 
 type = internal/mpd
 
-host = htpc
+host = htpc.1087
 port = 6600
 
 icon-stop             = %{T2}%{T-}

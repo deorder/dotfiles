@@ -1,0 +1,25 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["tray", "clock"],
+	"sway/window": {
+		"max-length": 80,
+		"tooltip": false
+	},
+	"sway/workspaces": {
+		"format": "{name}",
+		"disable-scroll": true
+	},
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+	"clock": {
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"tray": {
+		"icon-size": 18
+	}
+}

@@ -2,6 +2,25 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+# Deorder: Set profile
+case "${HOSTNAME}" in
+  *-laptop)
+  export PROFILE=laptop
+  ;;
+  *-desktop)
+  export PROFILE=desktop
+  ;;
+esac
+
+# Deorder: Set the XDG_RUNTIME_DIR variable
+if [ -z "${XDG_RUNTIME_DIR}" ]; then
+  export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+  if [ ! -d "${XDG_RUNTIME_DIR}" ]; then
+    mkdir "${XDG_RUNTIME_DIR}"
+    chmod 0700 "${XDG_RUNTIME_DIR}"
+  fi
+fi
+
 # Deorder: Disable __pycache__ folder
 export PYTHONDONTWRITEBYTECODE=1
 
@@ -36,6 +55,10 @@ if [ -f ${HOME}/.demo ]; then
   export HOSTNAME="drodan.com"
   export PS1='\[\033]0;deorder@drodan.com:\w\007\]\[\033[01;32m\]deorder@drodan.com\[\033[01;34m\] \w\[\033[00m\]$(__git_ps1 " (%s)") \[\033[01;34m\]\$\[\033[00m\] '
 fi
+
+# Deorder: Use wayland backend
+export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND=wayland
 
 # Deorder: Disable terminal lock
 stty -ixon -ixoff

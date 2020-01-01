@@ -1,0 +1,13 @@
+output 'Seiko Epson Corporation 0x314C 0x00000000' mode 1920x1080 position 0,0
+output 'Seiko Epson Corporation 0x314C 0x00000000' mode 1920x1080 position 1920,0
+
+workspace main output 'Seiko Epson Corporation 0x314C 0x00000000'
+workspace web output 'Seiko Epson Corporation 0x314C 0x00000000'
+workspace dev output 'Seiko Epson Corporation 0x314C 0x00000000'
+workspace gfx output 'Seiko Epson Corporation 0x314C 0x00000000'
+workspace sfx output 'Seiko Epson Corporation 0x314C 0x00000000'
+
+workspace demo output 'Seiko Epson Corporation 0x314C 0x00000000'
+workspace plan output 'Seiko Epson Corporation 0x314C 0x00000000'
+
+workspace main

@@ -1,0 +1,92 @@
+set $mod Mod4
+
+set $font pango:Hack
+set $wallpaper ~/.wallpaper.png
+
+set $browser firefox
+set $filemanager xdg-open ${HOME}
+set $term kitty --config ~/.kittyrc 
+
+set $screenshot grim ~/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip slurp | grim -g - ~/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png
+
+font $font
+output * bg $wallpaper tile
+
+default_border pixel 1
+hide_edge_borders smart
+default_floating_border normal
+
+floating_modifier $mod normal
+
+input * {
+  xkb_variant nodeadkeys
+}
+
+bindsym $mod+c kill
+bindsym $mod+Shift+r reload
+
+bindsym $mod+r exec $menu
+
+bindsym $mod+Return exec $term
+
+bindsym $mod+b exec $browser
+bindsym $mod+f exec $filemanager
+
+bindsym $mod+s exec $screenshot
+bindsym $mod+Shift+s exec $screenclip
+
+bindsym $mod+Up focus up
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+1 workspace main
+bindsym $mod+2 workspace web
+bindsym $mod+3 workspace dev
+bindsym $mod+4 workspace gfx
+bindsym $mod+5 workspace sfx
+bindsym $mod+6 workspace demo
+bindsym $mod+7 workspace plan
+
+bindsym $mod+Shift+1 move container to workspace main
+bindsym $mod+Shift+2 move container to workspace web
+bindsym $mod+Shift+3 move container to workspace dev
+bindsym $mod+Shift+4 move container to workspace gfx
+bindsym $mod+Shift+5 move container to workspace sfx
+bindsym $mod+Shift+6 move container to workspace demo
+bindsym $mod+Shift+7 move container to workspace plan
+
+bindsym --locked XF86AudioPlay exec mpc play
+bindsym --locked XF86AudioNext exec mpc next
+bindsym --locked XF86AudioPrev exec mpc prev
+
+bindsym --locked XF86Display exec echo "presentation"
+
+bindsym --locked XF86TouchpadToggle exec echo "touchpad toggle"
+
+bindsym --locked XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym --locked XF86MonBrightnessDown exec xbacklight -dec 10
+
+bindsym --locked XF86AudioRaiseVolume exec amixer -c 0 set Master 5+
+bindsym --locked XF86AudioLowerVolume exec amixer -c 0 set Master 5-
+
+bindsym Ctrl+Alt+BackSpace exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit?' -b 'Yes, exit' 'swaymsg exit'
+
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+w fullscreen
+bindsym $mod+w floating toggle
+
+bindsym $mod+h splith
+bindsym $mod+v splitv
+
+exec_always sh -c "killall -q waybar; waybar --config ~/.waybarrc --style ~/.waybar.css"
+
+include /etc/.swayrc.${PROFILE}
+
+exec xrdb ~/.Xresources

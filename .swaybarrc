@@ -1,0 +1,3 @@
+datetime_formatted=$(date "+%a %F %H:%M")
+
+echo $datetime_formatted
