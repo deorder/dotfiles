@@ -56,9 +56,8 @@ if [ -f ${HOME}/.demo ]; then
   export PS1='\[\033]0;deorder@drodan.com:\w\007\]\[\033[01;32m\]deorder@drodan.com\[\033[01;34m\] \w\[\033[00m\]$(__git_ps1 " (%s)") \[\033[01;34m\]\$\[\033[00m\] '
 fi
 
-# Deorder: Use wayland backend
-export MOZ_ENABLE_WAYLAND=1
-export GDK_BACKEND=wayland
+# Deorder: Force Kitty to use xterm terminfo (even though it is wrong)
+export TERM=xterm-256color
 
 # Deorder: Disable terminal lock
 stty -ixon -ixoff

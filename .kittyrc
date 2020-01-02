@@ -1,9 +1,9 @@
 font_size 10.5
 
 font_family Hack
-bold_font Hack Regular
+bold_font Hack Bold
 italic_font Hack Italic
-bold_italic_font Hack Italic
+bold_italic_font Hack Bold Italic
 
 background_opacity 0.95
 

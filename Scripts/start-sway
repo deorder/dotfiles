@@ -1,2 +1,7 @@
 #!/bin/sh
+
+# Deorder: Use wayland backend
+export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND=wayland
+
 exec sway --my-next-gpu-wont-be-nvidia --config ~/.swayrc
